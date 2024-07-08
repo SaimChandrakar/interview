@@ -7,8 +7,9 @@ import Women from './components/Women';
 import Navigationbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import PageNotFound from './components/PageNotFound';
 
-const App = () => {
+export default function App() {
   return (
     <Router>
       <Navigationbar/>
@@ -17,10 +18,10 @@ const App = () => {
         <Route exact path="/auth/login" element={<Login/>} />,
         <Route path="/mans" element={<Mans/>} />,
         <Route path="/womens" element={<Women/>} />
+        <Route path="*" element={<PageNotFound/>} />
       </Routes>
       <Footer/>
     </Router>
   );
 };
 
-export default App;
